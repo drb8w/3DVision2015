@@ -1,3 +1,6 @@
 Thumbs.db
 thumbs.db
 THUMBS.DB
+*.aux
+*.log
+*.synctex.gz
