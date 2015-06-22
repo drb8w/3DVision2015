@@ -10,8 +10,13 @@
 
 
 % Title Page
-\title{3D Vision - }
-\author{Christian Br\"andle, Matr.Nr.: 1428543}
+\title{3D Vision LU}
+\author{Christian Br\"andle \\
+\texttt{Matr.Nr.: 1428543}
+\and Stefan Zaufl \\
+\texttt{ Matr.Nr.: 0925357}
+\and Dominik Sch\"orkhuber\\
+\texttt{ Matr.Nr.: 1027470}}
 
 \begin{document}
 
@@ -20,12 +25,35 @@
 %\begin{abstract}
 %\end{abstract}
 
+\section{Einleitung}
+asdfasdf
+
+\section{Modelle}
+\subsection{}
+\subsection{}
+\subsection{}
+
 \section{3D Scanning}
 
 Die Scandaten wurden $25$ Körperscans und $15$ Scans des Kopfes vorgenommen.
 Die Scans des Kopfes wurden mit einer anderen Linse vorgenommen um eine erhöhte Auflösung im Speziellen des Gesichtes zu erreichen.
 
-\subsection{Noise removal, registration and merging}
+% Probleme
+\subsection{}
+\subsection{}
+\subsection{}
+
+\section{Nachbearbeitung in Geomagic}
+
+1. Globale Registrierung in Gruppen
+2. Manuelle Registrierung der Gruppen, n-punkt
+3. Vereinigen der registrierten Meshes
+
+4. Nachbearbeitung
+- Glätten, Spitzen entfernen, Mesh Doctor, löcher füllen
+bis modell wasserdicht
+5. sandpapier für feine nachbearbeitung
+
 
 Zunächst wurden alle $40$ Scans gruppiert und manuell in den Gruppen zueinander registriert, da eine automatische Registrierung in den meisten Fällen fehlschlug.
 
@@ -43,28 +71,28 @@ Im der Reduktion wurde auf die detailierten Facescans und auf die doppelt vorhan
 
 Das Schließen des Modells erforderte manuelle Arbeit für jedes einzelne Loch. Das beste Vorgehen bestand darin, die Umgebung des Loches von von allen störenden Artefakten zu befreien welche die 2D Mannigfaltigkeit des Meshes in diesem Bereich stören. Danach wird das Loch unter Berücksichtigung der Kurvatur der umgebenden Oberfläche geschlossen.
 
-\subsection{Evaluation}
+% Nachbearbeitung und Probleme
+\subsection{}
+\subsection{}
+\subsection{}
+
+\section{Evaluation}
+
+% Messungen
+\subsection{}
+\subsection{}
+\subsection{}
 
 
-\section{Structure from Motion}
+\section{Structure from Motion mit 123d Catch}
 
 Die Aufnahmen für die Structure from Motion Rekonstruktion wurden auf einer freien Fläche vorgenommen. Dabei wurden zwei Ansätze mit direkter Frontalbeleuchtung vs. konstanter Beleuchtung vorgenommen.
 Die Aufnahmen sind in jeweils 3 konzentrischen Ringen in verschiedenen Höhen um das Objekt gestaffelt plus zwei Aufnahmen von oben.
 
-\subsection{Take photographs}
-
-\subsection{Noise removal}
-
-
-\section{Comparison}
-
-
-
-
-\begin{thebibliography}{1}
-
-  \bibitem{STF} Ana Paula B. Lopes, Rodrigo S. Oliveira, Jussara M. de Almeida, Arnaldo de A. Araujo {\em Spatio-Temporal Frames in a Bag-of-visual-features Approach for Human Actions Recognition} Computer Science Department, Federal University of Minas Gerais – UFMG – Belo Horizonte, MG, Brazil
-\end{thebibliography}        
+% Vergleich der einzelnen Modelle
+\subsection{}
+\subsection{}
+\subsection{}
 
 		
 \end{document}
