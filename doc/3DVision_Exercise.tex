@@ -7,6 +7,7 @@
 \usepackage[T1]{fontenc}
 \usepackage{amsmath}
 \usepackage{graphicx}
+\usepackage{float}
 
 
 % Title Page
@@ -31,7 +32,12 @@ In dieser Übung wurden von uns selbst gewählte Objekte mit einem 3D-Laserscann
 \section{Modelle}
 \subsection{}
 \subsection{}
-\subsection{}
+\subsection{Sparschwein}
+\begin{figure}[!h]
+\caption{Sparschwein}
+\centering
+\includegraphics[scale=0.25]{images/sparschwein/photo.jpg}
+\end{figure}
 
 \section{3D Scanning} % stefan
 
@@ -41,7 +47,8 @@ Die Scans des Kopfes wurden mit einer anderen Linse vorgenommen um eine erhöhte
 % Probleme
 \subsection{}
 \subsection{}
-\subsection{}
+\subsection{Sparschwein}
+Das Sparschwein Modell ist geometrisch nicht komplex, dennoch stellt es für den Minolta 3D-Scanner eine Herausforderung dar. Da das Modell sehr dunkel ist wird  nur ein sehr kleiner Anteil des Laser Lichts reflektiert. Um das zu kompensieren wurde beim Scanvorgang die Intensität des Lasers manuell erhöht. Weiters besitzt das Objekt einige sehr stark reflektierende Teile welche durch den Scanner schlecht bis gar nicht erfasst werden. In den Scans erscheinen diese Bereiche als Löcher. An den reflektierenden Bereichen konnte keine Oberfläche rekonstruiert werden. Glücklicherweise sind diese Bereiche nicht sehr groß und können in der Nachbearbeitung automatisch geschlossen werden.
 
 \section{Nachbearbeitung in Geomagic} % christian
 
@@ -69,19 +76,19 @@ Im der Reduktion wurde auf die detailierten Facescans und auf die doppelt vorhan
 
 \subsection{Waterproof 3D Model}
 
-Das Schließen des Modells erforderte manuelle Arbeit für jedes einzelne Loch. Das beste Vorgehen bestand darin, die Umgebung des Loches von von allen störenden Artefakten zu befreien welche die 2D Mannigfaltigkeit des Meshes in diesem Bereich stören. Danach wird das Loch unter Berücksichtigung der Kurvatur der umgebenden Oberfläche geschlossen.
+Das Schließen des Modells erforderte manuelle Arbeit für jedes einzelne Loch. Das beste Vorgehen bestand darin, die Umgebung des Loches von von allen störenden Artefakten zu befreien welche die 2D Mannigfaltigkeit des Meshes in diesem Bereich stören. Danach wird das Loch unter Berücksichtigung der Krümmung der umgebenden Oberfläche geschlossen.
 
 % Nachbearbeitung und Probleme
 \subsection{}
 \subsection{}
-\subsection{}
+\subsection{Sparschwein}
+Durch die einfache Geometrie des Modells war auch die Nachbearbeitung der Oberfläche relativ einfach. Fast alle Bereiche der Oberfläche weisen eine sehr niedrige Krümmung auf. Dadurch hatte das rekonstruierte Modell auch schon vor der Nachbearbeitung nur sehr wenige Fehler. Am meisten Probleme bereitete der Münzeinwurfschlitz. Da die Hülle des Sparschweins nur wenige Millimeter dick ist wurde innerhalb des Schlitzes keine Geometrie aufgenommen. Ein automatisches Schließen des Bereiches hat erst nach einigen Versuchen zum gewünschten Ergebnis geführt, da je nach dem wie viel Geometrie gelöscht wurde sich auch die automatische Rekonstruktion verändert. 
 
 \section{Evaluation}
-
 % Messungen
 \subsection{}
 \subsection{}
-\subsection{}
+\subsection{Sparschwein}
 
 
 \section{Structure from Motion mit 123d Catch} % dominik
