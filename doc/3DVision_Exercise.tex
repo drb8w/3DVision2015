@@ -7,6 +7,8 @@
 \usepackage[T1]{fontenc}
 \usepackage{amsmath}
 \usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
 \usepackage{float}
 
 
@@ -31,9 +33,18 @@ In dieser Übung wurden von uns selbst gewählte Objekte mit einem 3D-Laserscann
 
 \section{Modelle}
 \subsection{}
-\subsection{}
+\subsection{Mann}
+Das Modell von Stefan Zaufl ist eine Statuette von einem zusammengekauertern, weinenden Mann. Zu sehen in Abbildung \ref{fig:man:orig}.
+\begin{figure}[H]
+\caption{Weinender Mann}
+\centering
+\includegraphics[scale=0.11]{images/Mann_Original.jpg}
+\label{fig:man:orig}
+\end{figure}
+
+
 \subsection{Sparschwein}
-\begin{figure}[!h]
+\begin{figure}[H]
 \caption{Sparschwein}
 \centering
 \includegraphics[scale=0.25]{images/sparschwein/photo.jpg}
@@ -41,12 +52,26 @@ In dieser Übung wurden von uns selbst gewählte Objekte mit einem 3D-Laserscann
 
 \section{3D Scanning} % stefan
 
-Die Scandaten wurden $25$ Körperscans und $15$ Scans des Kopfes vorgenommen.
-Die Scans des Kopfes wurden mit einer anderen Linse vorgenommen um eine erhöhte Auflösung im Speziellen des Gesichtes zu erreichen.
+Die Modelle wurden mit einem Minolta 3D-Scanner virtualisiert. Dabei waren viele Arbeitsschritte bei uns allen ident: Zuerst wurde eine oder mehrere Linsen gewählt, die für den Scannvorgang benutzt werden sollten. Diese Auswahl hing größtenteils von der Größe des Objekts ab, da man den Scanner mit unterschiedlichen Linsen in unterschiedlichen Reichweiten zum Objekt platzieren konnte. Das Objekt selbst wurde auf einen Drehteller platziert, damit automatisch rundum-Messungen vorgenommen werden konnten.
+
+Nachdem man das Objekt gut platziert hatte, musste man den Scanner kalibrieren. Dafür musste man das Objekt wieder vom Drehteller entfernen und stattdessen das Kalibrierungsobjekt in die Mitte des Tellers stellen. Der Scanner nahm dann ein paar Messungen vor und danach war die Kamera zum Drehteller registriert.
+
+Nun konnte man das Objekt wieder auf den Teller platzieren und in der Software einen Autofokus durchführen. Manchmal musste hier der Fokus manuell nachgestellt werden, um eine bessere Tiefenschärfe über das gesamte Objekt zu erlangen. Nachdem nun alles bereit war konnte man den Scanvorgang starten. Der Scanner nahm automatisch 6 Messungen in unterschiedlichen Ansichten vor. Danach konnte das Objekt in eine z.B. liegende Position gebracht werden, um noch eine Messung durchzuführen. Wenn dabei die Kamera und der Drehteller nicht bewegt wurden, musste keine erneute Kalibrierung vorgenommen werden. In Abbildung \ref{fig:scansoftware} kann man einen Screenshot der Software vor einem Scanvorgang sehen.
+
+\begin{figure}[!h]
+\caption{Screenshot der Scansoftware vor einem Scanvorgang}
+\centering
+\includegraphics[width=0.9\textwidth]{images/Statue_Liegend.PNG}
+\label{fig:scansoftware}
+\end{figure}
+
+Nachdem alle Scans vorgenommen wurden mussten die erhobenen Daten nur noch exportiert werden. Diese sind aber keinesfalls schon finalisiert: Zwar sind die Rundumscans innerhalb registriert, doch untereinander noch gar nicht. Manche Scanns wurden in der Software sogar an anderen Orten angezeigt. Um die Daten zu bereinigen, mussten wir zu einer anderen Software greifen: Geomagic Studio.
 
 % Probleme
 \subsection{}
-\subsection{}
+\subsection{Mann}
+Die Mann-Statuette war ein dankbares Modell. Das Holz war matt genug um keine Probleme zu bereiten und die Form ist annähernd eine Kugel. Nur die Größe war schon grenzwertig. Es ging sich gerade noch aus alle Scans mit einer Linse für Nahaufnahmen durchzuführen. Wäre das Modell ein bisschen größer gewesen, hätten wir die Linse wechseln müssen und dann wäre das Objekt in den Scans sehr klein gewesen.
+
 \subsection{Sparschwein}
 Das Sparschwein Modell ist geometrisch nicht komplex, dennoch stellt es für den Minolta 3D-Scanner eine Herausforderung dar. Da das Modell sehr dunkel ist wird  nur ein sehr kleiner Anteil des Laser Lichts reflektiert. Um das zu kompensieren wurde beim Scanvorgang die Intensität des Lasers manuell erhöht. Weiters besitzt das Objekt einige sehr stark reflektierende Teile welche durch den Scanner schlecht bis gar nicht erfasst werden. In den Scans erscheinen diese Bereiche als Löcher. An den reflektierenden Bereichen konnte keine Oberfläche rekonstruiert werden. Glücklicherweise sind diese Bereiche nicht sehr groß und können in der Nachbearbeitung automatisch geschlossen werden.
 
@@ -80,7 +105,9 @@ Das Schließen des Modells erforderte manuelle Arbeit für jedes einzelne Loch. 
 
 % Nachbearbeitung und Probleme
 \subsection{}
-\subsection{}
+\subsection{Mann}
+Bei der Nachbearbeitung habe ich einen großen Fehler begangen: ich habe sehr lange Zeit nicht gespeichert, ganz und gar darauf vergessen. Nachdem ich das Objekt vereinigt hatte, stürzte die Software ab und ich musste alles noch einmal machen. Dieser Fehler ist mir dann nicht mehr unterlaufen. Ansonsten bin ich auf keine besonderen Probleme gestoßen.
+
 \subsection{Sparschwein}
 Durch die einfache Geometrie des Modells war auch die Nachbearbeitung der Oberfläche relativ einfach. Fast alle Bereiche der Oberfläche weisen eine sehr niedrige Krümmung auf. Dadurch hatte das rekonstruierte Modell auch schon vor der Nachbearbeitung nur sehr wenige Fehler. Am meisten Probleme bereitete der Münzeinwurfschlitz. Da die Hülle des Sparschweins nur wenige Millimeter dick ist wurde innerhalb des Schlitzes keine Geometrie aufgenommen. Ein automatisches Schließen des Bereiches hat erst nach einigen Versuchen zum gewünschten Ergebnis geführt, da je nach dem wie viel Geometrie gelöscht wurde sich auch die automatische Rekonstruktion verändert. 
 
@@ -89,7 +116,24 @@ Um die Qualität der 3D-Scans zu beurteilen wurden Messungen an den realen Objek
 
 % Messungen
 \subsection{}
-\subsection{}
+\subsection{Mann}
+Beim Mann wurden beim Vergleich der Messungen des Originals gegen die Minolta-Scans von rund $\pm 0.9$mm festgestellt(Siehe Tabelle \ref{tab:man:errorScan}). Das Volumen des Originalmodells konnte nicht ermittelt werden, da Wasser die Figur geschädigt hätte. Das von Geomagic berechnete Volumen beträgt $544250.14mm^3$.
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{l | c c | c}
+Modell: Mann& Original & Scan & Diff\\
+\hline
+Fußlänge & $34.76$mm & $35.94$mm & $-1.18$mm\\
+Armlänge & $70.53$mm & $69.80$mm & $0.73$mm\\
+Hosenbund & $14.95$mm & $15.83$mm & $0.88$mm\\
+\hline \hline
+Durchschnitt & & & $\pm 0.93$mm
+\end{tabular}
+\caption{Messfehler Original/Minolta-Scan}
+\label{tab:man:errorScan}
+\end{table}
+
 \subsection{Sparschwein}
 Für das Sparschwein wurden 7 Messungen durchgeführt und eine Genauigkeit von $\pm 1$mm festgestellt.
 % wenns bei euch auch gleich ist vll in einem absatz alle beschreiebn
@@ -100,11 +144,51 @@ Autodesk 123d Catch ist eine Online Platform für Structure from Motion rekonstr
 
 % Vergleich der einzelnen Modelle
 \subsection{}
-\subsection{}
+\subsection{Mann}
+Erwartungsgemäß ist das Modell, das mit 123D Catch erstellt worden ist weniger akkurat als jenes, das mit dem Laserscanner vermessen wurde. Dennoch weist das Modell einen hohen Detail und Genauigkeitsgrad auf. Zwar war eine direkte Messung nicht möglich, da bei Structure from Motion Algorithmen nur relative Werte entstehen, aber nachdem ich das Modell in Geomagic so gut wie möglich an den Minolta Scan angenähert hatte, konnte ich die Messungen durchführen.
+
+Man kann allerdings auch mit dem freien Auge erkennen, dass der Rücken der Statue nicht gut erkannt wurde. Der Hosenbund, der auf dem Original sehr deutlich zu erkennen ist verschwimmt bei der Rekonstruktion mit dem Rücken. Das kann man dadurch erklären, dass der Rücken bei der Aufnahme von der Lichtquelle abgewandt war und deshalb nicht genügend Features gefunden werden konnten.
+
+Beim Mann wurden beim Vergleich der Messungen des Originals gegen die Rekonstruktion von 123d Catch von rund $\pm 2.6$mm festgestellt(Siehe Tabelle \ref{tab:man:errorSFM}). Das von Geomagic berechnete Volumen beträgt $583912.27mm^3$, das ist ein Unterschied von $39662.13mm^3(7.28\%)$ zum Minolta-Scan.
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{l | c c | c}
+Modell: Mann& Original & SFM & Diff\\
+\hline
+Fußlänge & $34.76$mm & $38$mm & $-3.24$mm\\
+Armlänge & $70.53$mm & $73.07$mm & $-2.54$mm\\
+Hosenbund & $14.95$mm & $12.88$mm & $2.07$mm\\
+\hline \hline
+Durchschnitt & & & $\pm 2.62$mm
+\end{tabular}
+\caption{Messfehler Original/123D Catch}
+\label{tab:man:errorSFM}
+\end{table}
+
+\begin{figure}[hbtp]
+\caption{Vergleich Scan vs 123D Catch}
+
+\begin{subfigure}{\textwidth}
+	\caption{Ansicht von Vorne(Scan rechts, 123D Catch links)}
+	\centering
+	\includegraphics[width=\textwidth]{images/Mann_20_Comparison_Front.PNG}
+\end{subfigure}
+
+\begin{subfigure}{\textwidth}
+	\caption{Ansicht von Hinten(Scan links, 123D Catch rechts)}
+	\centering
+	\includegraphics[width=\textwidth]{images/Mann_19_Comparison_Back.PNG}
+\end{subfigure}
+
+\end{figure}
+
+
+
 \subsection{Sparschwein}
 Im Gegensatz zum Laserscanner hat 123d Catch große Probleme das Sparschwein zu rekonstruieren. Die Structure from Motion Technik verwendet Bildfeatures um die Bilder zueinander zu registrieren. Leider hat das Modell aber nur sehr wenige verwendbare Features. Entsprechend schlecht fällt das Ergebnis aus. In einem ersten Versuch wurden die Bilder so aufgenommen dass das Sparschwein das ganze Bild ausfüllt. In diesem Fall konnte 123d Catch überhaupt keine Registrierung erreichen. Um die Bilder mit Features anzureichern wurden die Aufnahmen in weiteren Versuchen aus etwas größerer Entfernung aufgenommen. Die Oberfläche konnte dann erfolgreich Rekonstruiert werden, wenn auch nur in sehr niedriger Qualität. In Bereichen wo Features vorhanden sind ist die Rekonstruktion durchaus detailliert. Man beachte den Schriftzug an der rechten Seite.
 
-\begin{figure}[!h]
+\begin{figure}[p]
 \caption{Vergleich mit 123d catch}
 \centering
 \includegraphics[width=80mm]{images/sparschwein/123d_Vergleich} % ersetzen
@@ -112,7 +196,7 @@ Im Gegensatz zum Laserscanner hat 123d Catch große Probleme das Sparschwein zu 
 \includegraphics[width=80mm]{images/sparschwein/123d_Vergleich}
 \end{figure}
 
-\begin{figure}[!h]
+\begin{figure}[p]
 \centering
 \caption{Finale Modelle}
 \includegraphics[width=80mm]{images/sparschwein/final} % ersetzen

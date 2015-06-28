@@ -4,3 +4,4 @@ THUMBS.DB
 *.aux
 *.log
 *.synctex.gz
+*.out
