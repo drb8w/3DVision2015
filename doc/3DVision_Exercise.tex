@@ -110,18 +110,93 @@ bis modell wasserdicht
 \end{enumerate}
 \end{enumerate}
 
+Obwohl die Registrierung von einheitlich erstellten Aufnahmen schon gegeben war, wurde eine globale Registrierung der Scans in den jeweiligen Scangruppen vorgenommen um Fehler weiter zu reduzieren. Zusätzlich erstellte Einzelscans mußten naturgemäß ohnehin in der passenden Gruppe entweder automatisch oder manuell registriert werden.
 
-Zunächst wurden alle $40$ Scans gruppiert und manuell in den Gruppen zueinander registriert, da eine automatische Registrierung in den meisten Fällen fehlschlug.
+Die einzelnen Scangruppen wurden anschließend zueinander global registriert, um eine endgültige Ausrichtung der gesammten Range Maps zu erhalten - siehe Abbildung \ref{fig:budhaGlobal}. In vielen Fällen erwies sich eine automatische Registrierung als fehlerhaft bzw. GeoMagic versagte gänzlich den Dienst. Aufgrund dessen wurden viele manuelle Registrierungen aufgrund einer n-Punkt Registration vorgenommen in der Hoffnung dass im Anschluss automatische Registrierungen greifen.
 
-Danach wurden die einzelnen Gruppen zueinander registriert um eine Gesamtdatenbasis des Modells zu erhalten.
+\begin{figure}[H]
+\centering
+\caption{Globale Registrierung - Falschfarbendarstellung der verschiedenen Range Maps}
+\includegraphics[scale=0.35]{images/GeoMagicBudhaPictures/Budha_Scans_Aufrecht_globalRegistration_2.PNG}
+\label{fig:budhaGlobal}
+\end{figure}
 
-Im Anschluss wurden auf den einzelnen Scans Fehler an den Scanrändern und bzw. überflüssige Teile der Scans von der Scanplatte entfernt.
+Bei der n-Punkt Registration wurden fixe und bewegliche Scans zueinander definiert und identische Punkte an der Oberfläche für die Registrierung definiert. Dabei war darauf zu achten, dass die Punkte möglichst großflächig und nicht auf einer Linie bzw. in einer Ebene zueinander liegen damit eine möglichst gute Annäherung sicher gestellt werden konnte - siehe Abbildung \ref{fig:budhaManual}. Aus den Range Maps wurden auch fehlerhafte Bereiche, insbesondere an den Rändern der Scans entfernt. Eine (erneute) Registrierung auf dieser Basis brachte eine weitere Verbesserung der Annäherung auf den bereinigten Daten mit sich.
 
-Eine erneute Registrierung der bereinigten Daten verbesserte die Passgenauigkeit etwas. 
+\begin{figure}[H]
+\caption{Manuelle n-Punkt Registrierung}
+\centering
+\includegraphics[scale=0.35]{images/GeoMagicBudhaPictures/Budha_Scans_Aufrecht_manualRegistration_03.PNG}
+\label{fig:budhaManual}
+\end{figure}
+ 
+Vor der Vereinigung der Meshes wurden noch die Teilmeshes auf ein vernünftiges Maß an Polygonen reduziert, um in vertretbarer Zeit auf ein brauchbares Ergebnis zu kommen.
+Nach der Vereinigung mußte der resultierende Mesh weitere Bearbeitungsschritte durchwandern. Der Mesh-Doktor von GeoMagic lieferte dabei gute Dienste - siehe Abbildung \ref{fig:budhaMeshDoc}. Die aufgeführten Identifizierungen zeigten:
 
-Das merging wurde auf Basis von allen Scans und auf Basis einer reduzierten Anzahl von Scans vorgenommen um Überlagerungen von identischen Scandaten zu vermeiden.
+\begin{itemize}
+\item nicht-mannigfaltige Kanten
+\item Selbstüberschneidungen
+\item extreme Kantenwinkel
+\item Spikes
+\item Kleine Komponenten
+\item Kleine Tunnel
+\item Kleine Löcher
+\end{itemize}
 
-Im der Reduktion wurde auf die detailierten Facescans und auf die doppelt vorhandenen 360 Grad Scans der aufrechten Figur zugunsten eines besseren Rausch- bzw. Interpolationsverhaltens verzichtet.
+\begin{figure}[H]
+\caption{Mesh-Doktor - Highlighting von defekten oder zu bearbeitenden Stellen}
+\centering
+\includegraphics[scale=0.35]{images/GeoMagicBudhaPictures/Budha_MeshDoctor.PNG}
+\label{fig:budhaMeshDoc}
+\end{figure}
+
+Teilweise wurde die automatische Reparatur bzw. Bereinigung angewandt, teilweise diente der Mesh-Doktor als Guide für manuelle Anpassungen im Mesh, insbesondere von Löschen fehlerhafter Geometrie und erneuter Rekonstruktion aus dem Umfeld. Diese manuelle Bearbeitung der teilweise künstlich eingeführten oder erweiterten Löcher wird exemplarisch am Schließen eines Loches in der Grundfläche einer Figur demonstriert - siehe Tabelle \ref{tab:BudhaHole}.
+
+\begin{table}[h]
+	\caption{Manuelles Schließen der Grundfläche einer Figur, links vorher, rechts nachher}
+	\begin{center}
+		\begin{tabular}{| c | c |}
+			\hline
+			\multicolumn{2}{|l|}{
+				\begin{tabular}{ l }
+				\emph{Budha - manuelles Schließen} \\
+				\end{tabular}
+			} \\
+			\hline
+			offen & geschlossen \\
+			\hline
+			\hline
+			& \\
+			\includegraphics[width=0.45\textwidth]{./Images/GeomagicBudhaPictures/Budha_SfM_BottomHole_2.PNG} & \includegraphics[width=0.45\textwidth]{./Images/GeomagicBudhaPictures/Budha_SfM_BottomHoleClosed_2.PNG} \\
+			\hline					  
+		\end{tabular}
+	\end{center}
+	\label{tab:BudhaHole}
+\end{table}
+
+Schlußendlich wurden noch Bearbeitungen wie  Glätten und Sandpapierbearbeitungen an bestimmten Stellen vorgenommen um den Gesamteindruck der Figur zu verbessern - siehe Tabelle \ref{tab:BudhaSmooth}.
+
+\begin{table}[h]
+	\caption{Manuelles Glätten einer Figur, links vorher, rechts nachher}
+	\begin{center}
+		\begin{tabular}{| c | c |}
+			\hline
+			\multicolumn{2}{|l|}{
+				\begin{tabular}{ l }
+				\emph{Budha - manuelles Glätten} \\
+				\end{tabular}
+			} \\
+			\hline
+			vor Glättung & nach Glättung \\
+			\hline
+			\hline
+			& \\
+			\includegraphics[width=0.45\textwidth]{./Images/GeomagicBudhaPictures/Budha_Presmooth.PNG} & \includegraphics[width=0.43\textwidth]{./Images/GeomagicBudhaPictures/Budha_Postsmooth.PNG} \\
+			\hline					  
+		\end{tabular}
+	\end{center}
+	\label{tab:BudhaSmooth}
+\end{table}
 
 \subsection{Waterproof 3D Model}
 
@@ -130,6 +205,18 @@ Das Schließen des Modells erforderte manuelle Arbeit für jedes einzelne Loch. 
 % Nachbearbeitung und Probleme
 \subsection{Budha}
 
+Zunächst wurden alle $40$ Scans gruppiert und manuell in den Gruppen zueinander registriert, da eine automatische Registrierung in den meisten Fällen fehlschlug.
+
+Danach wurden die einzelnen Gruppen zueinander registriert um eine Gesamtdatenbasis des Modells zu erhalten.
+
+Im Anschluss wurden auf den einzelnen Scans Fehler an den Scanrändern und bzw. überflüssige Teile der Scans von der Scanplatte entfernt.
+
+Eine erneute Registrierung der bereinigten Daten verbesserte die Passgenauigkeit etwas. 
+Auch wurden die Meshes dezimiert, damit die Datenmenge handhabbarer wurde als auch der Resultat des Merge-Vorgangs deutlich verbesserte.
+
+Das Merging wurde auf Basis von allen Scans und auf Basis einer reduzierten Anzahl von Scans vorgenommen um Überlagerungen von identischen Scandaten zu vermeiden.
+
+In der Reduktion wurde auf die detailierten Facescans und auf die doppelt vorhandenen 360 Grad Scans der aufrechten Figur zugunsten eines besseren Rausch- bzw. Interpolationsverhaltens verzichtet.
 
 
 \subsection{Mann}
@@ -188,6 +275,7 @@ Die Aufnahmen für den Budha wurden unter diffusem Tageslicht mit Deckenbeleucht
 Nur in der Armbeuge gab es wie erwartet Probleme, ebenfalls in der Abgrenzung der Figur zum Untergrund. Ansonsten stellte die Rekonstruktion eine gute Annäherung der Figur dar - siehe Tabelle \ref{tab:Budha-SfM}.
 
 \begin{table}[h]
+	\caption{Darstellung der Budha-Figur aus der Structure from Motion Rekonstruktion. Linke Darstellung texturiert, rechte Darstellung untexturiert.}
 	\begin{center}
 		\begin{tabular}{| c | c |}
 			\hline
@@ -200,13 +288,13 @@ Nur in der Armbeuge gab es wie erwartet Probleme, ebenfalls in der Abgrenzung de
 			texturiert & untexturiert \\
 			\hline
 			\hline
-			\includegraphics[width=0.45\textwidth]{./Images/Budha/Budha_SfM_Textured.png} & \includegraphics[width=0.45\textwidth]{./Images/Budha/Budha_SfM_Untextured.png} \\
+			 & \\
+			\includegraphics[width=0.45\textwidth]{./Images/Budha/Budha_SfM_Textured.png} & \includegraphics[width=0.46\textwidth]{./Images/Budha/Budha_SfM_Untextured.png} \\
 			\hline
-			\includegraphics[width=0.45\textwidth]{./Images/Budha/Budha_SfM_Textured_2.png} & \includegraphics[width=0.45\textwidth]{./Images/Budha/Budha_SfM_Untextured_2.png} \\
+			\includegraphics[width=0.48\textwidth]{./Images/Budha/Budha_SfM_Textured_2.png} & \includegraphics[width=0.45\textwidth]{./Images/Budha/Budha_SfM_Untextured_2.png} \\
 			\hline					  
 		\end{tabular}
 	\end{center}
-	\caption{Darstellung der Budha-Figur aus der Structure from Motion Rekonstruktion. Linke Darstellung texturiert, rechte Darstellung untexturiert.}
 	\label{tab:Budha-SfM}
 \end{table}
 
