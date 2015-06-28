@@ -93,13 +93,12 @@ Durch die einfache Geometrie des Modells war auch die Nachbearbeitung der Oberfl
 
 \section{Structure from Motion mit 123d Catch} % dominik
 
-Die Aufnahmen für die Structure from Motion Rekonstruktion wurden auf einer freien Fläche vorgenommen. Dabei wurden zwei Ansätze mit direkter Frontalbeleuchtung vs. konstanter Beleuchtung vorgenommen.
-Die Aufnahmen sind in jeweils 3 konzentrischen Ringen in verschiedenen Höhen um das Objekt gestaffelt plus zwei Aufnahmen von oben.
+Autodesk 123d Catch ist eine Online Platform für Structure from Motion rekonstruktion. Zunächst werden Bilder des Objektes in konzentrischen Kreisen und aus mehreren Winkeln aufgenommen. Dabei ist es wichtig für eine gleichbleibende Beleuchtung zu sorgen. Am besten verwendet man mehrere Lampen die das Objekt gleichmäßig ausleuchten. Beim Aufnehmen der Bilder muss man sehr darauf achten keine Schatten auf das Objekt zu werfen. Nachdem man ~40+ Bilder aufgenommmen hat werden diese mit der 123d Catch Applikation hochgeladen und automatisch verarbeitet. Sobald der Vorgang abgeschlossen ist kann man das fertige Modell herunterladen. Die Rekonstruktion nimmt mit einer Berechnungszeit von ca. 45 Minuten sehr viel Zeit in Anspruch da die gesamte Verarbeitung der Daten am Server passiert. Ein großer Vorteil der Technologie ist dass keine spezielle Hardware benötigt wird. Sogar eine Handykamera reicht bereits aus um gute Ergebnisse zu erzielen.
 
 % Vergleich der einzelnen Modelle
 \subsection{}
 \subsection{}
-\subsection{}
-
+\subsection{Sparschwein}
+Im Gegensatz zum Laserscanner hat 123d Catch große Probleme das Sparschwein zu rekonstruieren. Die Structure from Motion Technik verwendet Bildfeatures um die Bilder zueinander zu registrieren. Leider hat das Modell aber nur sehr wenige verwendbare Features. Entsprechend schlecht fällt das Ergebnis aus. In einem ersten Versuch wurden die Bilder so aufgenommen dass das Sparschwein das ganze Bild ausfüllt. In diesem Fall konnte 123d Catch überhaupt keine Registrierung erreichen. Um die Bilder mit Features anzureichern wurden die Aufnahmen in weiteren Versuchen aus etwas größerer Entfernung aufgenommen. Die Oberfläche konnte dann erfolgreich Rekonstruiert werden, wenn auch nur in sehr niedriger Qualität.
 		
 \end{document}
