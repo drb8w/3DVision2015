@@ -32,7 +32,16 @@
 In dieser Übung wurden von uns selbst gewählte Objekte mit einem 3D-Laserscanner virtualisiert. Dieses Dokument enthält alle Schritte des Scan- und Bearbeitungsvorganges. Eine abschließende Evaluation und ein Vergleich mit Autodesk 123D Catch zeigt die Qualität und Genauigkeit der erzeugten Modelle. 
 
 \section{Modelle}
-\subsection{}
+\subsection{Budha}
+
+Das Modell von Christian Brändle ist eine kleine Budhastatue - siehe Abbildung \ref{fig:budha_org}.
+\begin{figure}[H]
+\caption{Budha}
+\centering
+\includegraphics[scale=0.4]{images/Budha/Budha_Original.jpg}
+\label{fig:budha_org}
+\end{figure}
+
 \subsection{Mann}
 Das Modell von Stefan Zaufl ist eine Statuette von einem zusammengekauertern, weinenden Mann. Zu sehen in Abbildung \ref{fig:man:orig}.
 \begin{figure}[H]
@@ -68,7 +77,11 @@ Nun konnte man das Objekt wieder auf den Teller platzieren und in der Software e
 Nachdem alle Scans vorgenommen wurden mussten die erhobenen Daten nur noch exportiert werden. Diese sind aber keinesfalls schon finalisiert: Zwar sind die Rundumscans innerhalb registriert, doch untereinander noch gar nicht. Manche Scanns wurden in der Software sogar an anderen Orten angezeigt. Um die Daten zu bereinigen, mussten wir zu einer anderen Software greifen: Geomagic Studio.
 
 % Probleme
-\subsection{}
+\subsection{Budha}
+
+Beim Scanvorgang der Budha Statue gab es trotz der dunklen Oberfläche keine nennenswerten Probleme. Auch die leichte Rauheit der Figur führte zu keiner gravierenden Ablenkung der Lasermessung. Für das Gesicht wurde zugunsten einer höheren Genauigkeit auf eine andere Linse zurückgegriffen. Um alle wesentlichen Abschattungen zu scannen wurde die Statue händisch in mehreren Posen aufgestellt um die Armbeuge sowie die Fußleiste der Figur optimal zu erfassen.
+
+
 \subsection{Mann}
 Die Mann-Statuette war ein dankbares Modell. Das Holz war matt genug um keine Probleme zu bereiten und die Form ist annähernd eine Kugel. Nur die Größe war schon grenzwertig. Es ging sich gerade noch aus alle Scans mit einer Linse für Nahaufnahmen durchzuführen. Wäre das Modell ein bisschen größer gewesen, hätten wir die Linse wechseln müssen und dann wäre das Objekt in den Scans sehr klein gewesen.
 
@@ -77,14 +90,25 @@ Das Sparschwein Modell ist geometrisch nicht komplex, dennoch stellt es für den
 
 \section{Nachbearbeitung in Geomagic} % christian
 
-1. Globale Registrierung in Gruppen
-2. Manuelle Registrierung der Gruppen, n-punkt
-3. Vereinigen der registrierten Meshes
+Wie erwartet bestand die Hauptarbeit der Nachbearbeitung der Scandaten. Dabei wurden im wesentlichen folgende Schritte vorgenommen:
 
-4. Nachbearbeitung
-- Glätten, Spitzen entfernen, Mesh Doctor, löcher füllen
+\begin{enumerate}
+\item Registrierung
+\begin{enumerate}
+\item Globale Registrierung in Gruppen
+\item Manuelle Registrierung der Gruppen, n-Punkt Registrierung
+\end{enumerate}
+\item Meshgenerierung
+\begin{enumerate}
+\item Vereinigen der registrierten Meshes
+\end{enumerate}
+\item Nachbearbeitung
+\begin{enumerate}
+\item Nachbearbeitung: 2D-Mannigkeitsfehler entfernen, Glätten, Spitzen entfernen, Mesh-Doctor, Löcher füllen
 bis modell wasserdicht
-5. sandpapier für feine nachbearbeitung
+\item Feine Nachbearbeitung: Sandpapier
+\end{enumerate}
+\end{enumerate}
 
 
 Zunächst wurden alle $40$ Scans gruppiert und manuell in den Gruppen zueinander registriert, da eine automatische Registrierung in den meisten Fällen fehlschlug.
@@ -104,7 +128,10 @@ Im der Reduktion wurde auf die detailierten Facescans und auf die doppelt vorhan
 Das Schließen des Modells erforderte manuelle Arbeit für jedes einzelne Loch. Das beste Vorgehen bestand darin, die Umgebung des Loches von von allen störenden Artefakten zu befreien welche die 2D Mannigfaltigkeit des Meshes in diesem Bereich stören. Danach wird das Loch unter Berücksichtigung der Krümmung der umgebenden Oberfläche geschlossen.
 
 % Nachbearbeitung und Probleme
-\subsection{}
+\subsection{Budha}
+
+
+
 \subsection{Mann}
 Bei der Nachbearbeitung habe ich einen großen Fehler begangen: ich habe sehr lange Zeit nicht gespeichert, ganz und gar darauf vergessen. Nachdem ich das Objekt vereinigt hatte, stürzte die Software ab und ich musste alles noch einmal machen. Dieser Fehler ist mir dann nicht mehr unterlaufen. Ansonsten bin ich auf keine besonderen Probleme gestoßen.
 
@@ -115,7 +142,19 @@ Durch die einfache Geometrie des Modells war auch die Nachbearbeitung der Oberfl
 Um die Qualität der 3D-Scans zu beurteilen wurden Messungen an den realen Objekten durchgeführt und mit Messungen an den erzeugten Modellen verglichen.
 
 % Messungen
-\subsection{}
+\subsection{Budha}
+
+Aufgrund der Tatsache dass Geomagic die beiden 3D-Modelle des 3D-Scans und der SfM-Erfassung leider nicht per Registrierung aneinander ausrichten konnte wurde aufgrund von optischer Übereinstimmung eine Skalierung und Überlagerung der Modelle per Hand vorgenommen. Da insbesondere die Höhe der Fußleiste im SfM-Modell eher auf einer begründeten Schätzung basiert ist es nicht verwunderlich, dass große Fehler in der Volumensbestimmung zu erwarten waren. Die Berechnung des Volumens der beiden Modelle basiert auf folgender gezeigten händischen Überlagerung \ref{fig:budhaMerge}.
+
+\begin{figure}[H]
+\caption{Budha}
+\centering
+\includegraphics[scale=0.4]{images/GeoMagicBudhaPictures/Budha_Merge_SfM_3DScan.PNG}
+\label{fig:budhaMerge}
+\end{figure}
+
+Der Volumensvergleich von dem 3D-Scan-Modell zu dem SfM-Modell beträgt $204007 mm^3$ zu $214291 mm^3$, relativ also $5 \%$ Unterschied. 
+
 \subsection{Mann}
 Beim Mann wurden beim Vergleich der Messungen des Originals gegen die Minolta-Scans von rund $\pm 0.9$mm festgestellt(Siehe Tabelle \ref{tab:man:errorScan}). Das Volumen des Originalmodells konnte nicht ermittelt werden, da Wasser die Figur geschädigt hätte. Das von Geomagic berechnete Volumen beträgt $544250.14mm^3$.
 
@@ -143,7 +182,34 @@ Für das Sparschwein wurden 7 Messungen durchgeführt und eine Genauigkeit von $
 Autodesk 123d Catch ist eine Online Platform für Structure from Motion rekonstruktion. Zunächst werden Bilder des Objektes in konzentrischen Kreisen und aus mehreren Winkeln aufgenommen. Dabei ist es wichtig für eine gleichbleibende Beleuchtung zu sorgen. Am besten verwendet man mehrere Lampen die das Objekt gleichmäßig ausleuchten. Beim Aufnehmen der Bilder muss man sehr darauf achten keine Schatten auf das Objekt zu werfen. Nachdem man ~40+ Bilder aufgenommmen hat werden diese mit der 123d Catch Applikation hochgeladen und automatisch verarbeitet. Sobald der Vorgang abgeschlossen ist kann man das fertige Modell herunterladen. Die Rekonstruktion nimmt mit einer Berechnungszeit von ca. 45 Minuten sehr viel Zeit in Anspruch da die gesamte Verarbeitung der Daten am Server passiert. Ein großer Vorteil der Technologie ist dass keine spezielle Hardware benötigt wird. Sogar eine Handykamera reicht bereits aus um gute Ergebnisse zu erzielen.
 
 % Vergleich der einzelnen Modelle
-\subsection{}
+\subsection{Budha}
+
+Die Aufnahmen für den Budha wurden unter diffusem Tageslicht mit Deckenbeleuchtung und einem Spot von oben vorgenommen. Dadurch war die Beleuchtung konstant und aufgrund der Profilierung und der Grauwertunterschiede auf der Steinstruktur konnten ausreichend Features zu einer gelungenen Rekonstruktion ermittelt werden. Die Aufnahmen geschahen in drei konzentrischen Kreisen in verschiedener Höhe um die Figur plus zwei Aufnahmen von oben.
+Nur in der Armbeuge gab es wie erwartet Probleme, ebenfalls in der Abgrenzung der Figur zum Untergrund. Ansonsten stellte die Rekonstruktion eine gute Annäherung der Figur dar - siehe Tabelle \ref{tab:Budha-SfM}.
+
+\begin{table}[h]
+	\begin{center}
+		\begin{tabular}{| c | c |}
+			\hline
+			\multicolumn{2}{|l|}{
+				\begin{tabular}{ l }
+				\emph{Budha SfM Rekonstruktion} \\
+				\end{tabular}
+			} \\
+			\hline
+			texturiert & untexturiert \\
+			\hline
+			\hline
+			\includegraphics[width=0.45\textwidth]{./Images/Budha/Budha_SfM_Textured.png} & \includegraphics[width=0.45\textwidth]{./Images/Budha/Budha_SfM_Untextured.png} \\
+			\hline
+			\includegraphics[width=0.45\textwidth]{./Images/Budha/Budha_SfM_Textured_2.png} & \includegraphics[width=0.45\textwidth]{./Images/Budha/Budha_SfM_Untextured_2.png} \\
+			\hline					  
+		\end{tabular}
+	\end{center}
+	\caption{Darstellung der Budha-Figur aus der Structure from Motion Rekonstruktion. Linke Darstellung texturiert, rechte Darstellung untexturiert.}
+	\label{tab:Budha-SfM}
+\end{table}
+
 \subsection{Mann}
 Erwartungsgemäß ist das Modell, das mit 123D Catch erstellt worden ist weniger akkurat als jenes, das mit dem Laserscanner vermessen wurde. Dennoch weist das Modell einen hohen Detail und Genauigkeitsgrad auf. Zwar war eine direkte Messung nicht möglich, da bei Structure from Motion Algorithmen nur relative Werte entstehen, aber nachdem ich das Modell in Geomagic so gut wie möglich an den Minolta Scan angenähert hatte, konnte ich die Messungen durchführen.
 
@@ -182,8 +248,6 @@ Durchschnitt & & & $\pm 2.62$mm
 \end{subfigure}
 
 \end{figure}
-
-
 
 \subsection{Sparschwein}
 Im Gegensatz zum Laserscanner hat 123d Catch große Probleme das Sparschwein zu rekonstruieren. Die Structure from Motion Technik verwendet Bildfeatures um die Bilder zueinander zu registrieren. Leider hat das Modell aber nur sehr wenige verwendbare Features. Entsprechend schlecht fällt das Ergebnis aus. In einem ersten Versuch wurden die Bilder so aufgenommen dass das Sparschwein das ganze Bild ausfüllt. In diesem Fall konnte 123d Catch überhaupt keine Registrierung erreichen. Um die Bilder mit Features anzureichern wurden die Aufnahmen in weiteren Versuchen aus etwas größerer Entfernung aufgenommen. Die Oberfläche konnte dann erfolgreich Rekonstruiert werden, wenn auch nur in sehr niedriger Qualität. In Bereichen wo Features vorhanden sind ist die Rekonstruktion durchaus detailliert. Man beachte den Schriftzug an der rechten Seite.

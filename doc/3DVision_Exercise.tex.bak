@@ -1,0 +1,70 @@
+\documentclass[]{article}
+
+\usepackage{ngerman}
+\usepackage{comment}
+\usepackage[ngerman]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{graphicx}
+
+
+% Title Page
+\title{3D Vision - }
+\author{Christian Br\"andle, Matr.Nr.: 1428543}
+
+\begin{document}
+
+\maketitle
+
+%\begin{abstract}
+%\end{abstract}
+
+\section{3D Scanning}
+
+Die Scandaten wurden $25$ Körperscans und $15$ Scans des Kopfes vorgenommen.
+Die Scans des Kopfes wurden mit einer anderen Linse vorgenommen um eine erhöhte Auflösung im Speziellen des Gesichtes zu erreichen.
+
+\subsection{Noise removal, registration and merging}
+
+Zunächst wurden alle $40$ Scans gruppiert und manuell in den Gruppen zueinander registriert, da eine automatische Registrierung in den meisten Fällen fehlschlug.
+
+Danach wurden die einzelnen Gruppen zueinander registriert um eine Gesamtdatenbasis des Modells zu erhalten.
+
+Im Anschluss wurden auf den einzelnen Scans Fehler an den Scanrändern und bzw. überflüssige Teile der Scans von der Scanplatte entfernt.
+
+Eine erneute Registrierung der bereinigten Daten verbesserte die Passgenauigkeit etwas. 
+
+Das merging wurde auf Basis von allen Scans und auf Basis einer reduzierten Anzahl von Scans vorgenommen um Überlagerungen von identischen Scandaten zu vermeiden.
+
+Im der Reduktion wurde auf die detailierten Facescans und auf die doppelt vorhandenen 360 Grad Scans der aufrechten Figur zugunsten eines besseren Rausch- bzw. Interpolationsverhaltens verzichtet.
+
+\subsection{Waterproof 3D Model}
+
+Das Schließen des Modells erforderte manuelle Arbeit für jedes einzelne Loch. Das beste Vorgehen bestand darin, die Umgebung des Loches von von allen störenden Artefakten zu befreien welche die 2D Mannigfaltigkeit des Meshes in diesem Bereich stören. Danach wird das Loch unter Berücksichtigung der Kurvatur der umgebenden Oberfläche geschlossen.
+
+\subsection{Evaluation}
+
+
+\section{Structure from Motion}
+
+Die Aufnahmen für die Structure from Motion Rekonstruktion wurden auf einer freien Fläche vorgenommen. Dabei wurden zwei Ansätze mit direkter Frontalbeleuchtung vs. konstanter Beleuchtung vorgenommen.
+Die Aufnahmen sind in jeweils 3 konzentrischen Ringen in verschiedenen Höhen um das Objekt gestaffelt plus zwei Aufnahmen von oben.
+
+\subsection{Take photographs}
+
+\subsection{Noise removal}
+
+
+\section{Comparison}
+
+
+
+
+\begin{thebibliography}{1}
+
+  \bibitem{STF} Ana Paula B. Lopes, Rodrigo S. Oliveira, Jussara M. de Almeida, Arnaldo de A. Araujo {\em Spatio-Temporal Frames in a Bag-of-visual-features Approach for Human Actions Recognition} Computer Science Department, Federal University of Minas Gerais – UFMG – Belo Horizonte, MG, Brazil
+\end{thebibliography}        
+
+		
+\end{document}
