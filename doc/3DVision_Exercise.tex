@@ -85,11 +85,13 @@ Das Schließen des Modells erforderte manuelle Arbeit für jedes einzelne Loch. 
 Durch die einfache Geometrie des Modells war auch die Nachbearbeitung der Oberfläche relativ einfach. Fast alle Bereiche der Oberfläche weisen eine sehr niedrige Krümmung auf. Dadurch hatte das rekonstruierte Modell auch schon vor der Nachbearbeitung nur sehr wenige Fehler. Am meisten Probleme bereitete der Münzeinwurfschlitz. Da die Hülle des Sparschweins nur wenige Millimeter dick ist wurde innerhalb des Schlitzes keine Geometrie aufgenommen. Ein automatisches Schließen des Bereiches hat erst nach einigen Versuchen zum gewünschten Ergebnis geführt, da je nach dem wie viel Geometrie gelöscht wurde sich auch die automatische Rekonstruktion verändert. 
 
 \section{Evaluation}
+Um die Qualität der 3D-Scans zu beurteilen wurden Messungen an den realen Objekten durchgeführt und mit Messungen an den erzeugten Modellen verglichen.
+
 % Messungen
 \subsection{}
 \subsection{}
 \subsection{Sparschwein}
-
+Für das Sparschwein wurden 7 Messungen durchgeführt. 
 
 \section{Structure from Motion mit 123d Catch} % dominik
 
@@ -99,6 +101,22 @@ Autodesk 123d Catch ist eine Online Platform für Structure from Motion rekonstr
 \subsection{}
 \subsection{}
 \subsection{Sparschwein}
-Im Gegensatz zum Laserscanner hat 123d Catch große Probleme das Sparschwein zu rekonstruieren. Die Structure from Motion Technik verwendet Bildfeatures um die Bilder zueinander zu registrieren. Leider hat das Modell aber nur sehr wenige verwendbare Features. Entsprechend schlecht fällt das Ergebnis aus. In einem ersten Versuch wurden die Bilder so aufgenommen dass das Sparschwein das ganze Bild ausfüllt. In diesem Fall konnte 123d Catch überhaupt keine Registrierung erreichen. Um die Bilder mit Features anzureichern wurden die Aufnahmen in weiteren Versuchen aus etwas größerer Entfernung aufgenommen. Die Oberfläche konnte dann erfolgreich Rekonstruiert werden, wenn auch nur in sehr niedriger Qualität.
+Im Gegensatz zum Laserscanner hat 123d Catch große Probleme das Sparschwein zu rekonstruieren. Die Structure from Motion Technik verwendet Bildfeatures um die Bilder zueinander zu registrieren. Leider hat das Modell aber nur sehr wenige verwendbare Features. Entsprechend schlecht fällt das Ergebnis aus. In einem ersten Versuch wurden die Bilder so aufgenommen dass das Sparschwein das ganze Bild ausfüllt. In diesem Fall konnte 123d Catch überhaupt keine Registrierung erreichen. Um die Bilder mit Features anzureichern wurden die Aufnahmen in weiteren Versuchen aus etwas größerer Entfernung aufgenommen. Die Oberfläche konnte dann erfolgreich Rekonstruiert werden, wenn auch nur in sehr niedriger Qualität. In Bereichen wo Features vorhanden sind ist die Rekonstruktion durchaus detailliert. Man beachte den Schriftzug an der rechten Seite.
+
+\begin{figure}[!h]
+\caption{Vergleich mit 123d catch}
+\centering
+\includegraphics[width=80mm]{images/sparschwein/123d_Vergleich} % ersetzen
+\includegraphics[width=80mm]{images/sparschwein/123d_Vergleich} % ersetzen
+\includegraphics[width=80mm]{images/sparschwein/123d_Vergleich}
+\end{figure}
+
+\begin{figure}[!h]
+\centering
+\caption{Finale Modelle}
+\includegraphics[width=80mm]{images/sparschwein/final} % ersetzen
+\includegraphics[width=80mm]{images/sparschwein/final} % ersetzen
+\includegraphics[width=80mm]{images/sparschwein/final}
+\end{figure}
 		
 \end{document}
