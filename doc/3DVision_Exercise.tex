@@ -53,10 +53,12 @@ Das Modell von Stefan Zaufl ist eine Statuette von einem zusammengekauertern, we
 
 
 \subsection{Sparschwein}
+Das Modell von Dominik Schörkhuber ist das Schwarzgeld Sparschwein. Zu sehen in Abbildung \ref{fig:piggy}.
 \begin{figure}[H]
 \caption{Sparschwein}
 \centering
 \includegraphics[scale=0.25]{images/sparschwein/photo.jpg}
+\label{fig:piggy}
 \end{figure}
 
 \section{3D Scanning} % stefan
@@ -338,12 +340,21 @@ Durchschnitt & & & $\pm 2.62$mm
 \end{figure}
 
 \subsection{Sparschwein}
-Im Gegensatz zum Laserscanner hat 123d Catch große Probleme das Sparschwein zu rekonstruieren. Die Structure from Motion Technik verwendet Bildfeatures um die Bilder zueinander zu registrieren. Leider hat das Modell aber nur sehr wenige verwendbare Features. Entsprechend schlecht fällt das Ergebnis aus. In einem ersten Versuch wurden die Bilder so aufgenommen dass das Sparschwein das ganze Bild ausfüllt. In diesem Fall konnte 123d Catch überhaupt keine Registrierung erreichen. Um die Bilder mit Features anzureichern wurden die Aufnahmen in weiteren Versuchen aus etwas größerer Entfernung aufgenommen. Die Oberfläche konnte dann erfolgreich Rekonstruiert werden, wenn auch nur in sehr niedriger Qualität. In Bereichen wo Features vorhanden sind ist die Rekonstruktion durchaus detailliert. Man beachte den Schriftzug an der rechten Seite.
+Im Gegensatz zum Laserscanner hat 123d Catch große Probleme das Sparschwein zu rekonstruieren. Die Structure from Motion Technik verwendet Bildfeatures um die Bilder zueinander zu registrieren. Leider hat das Modell aber nur sehr wenige verwendbare Features. Entsprechend schlecht fällt das Ergebnis aus. In einem ersten Versuch wurden die Bilder so aufgenommen dass das Sparschwein das ganze Bild ausfüllt. In diesem Fall konnte 123d Catch überhaupt keine Registrierung erreichen. Um die Bilder mit Features anzureichern wurden die Aufnahmen in weiteren Versuchen aus etwas größerer Entfernung aufgenommen. Dadurch konnte 123d Catch die Bilder ohne manuelle Registrierung verarbeiten. Das Ergebnis war aber noch unbefriedigend. 
+Für eine bessere Rekonstruktion hab ich dann das Objekt wieder bildfüllend aufgenommen und ca. 20 der 40 Bilder manuell registriert. Das Ergebnis ist in 
+Abbildung\ref{fig:piggy_vergleich} zu sehen.
 
 \begin{figure}[p]
 \caption{Vergleich Sparschwein Minolta / 123d catch}
 \centering
 \includegraphics[width=80mm]{images/sparschwein/123d_Vergleich} % ersetzen
+\label{fig:piggy_vergleich}
+\end{figure}
+
+\begin{figure}[p]
+\caption{Sparschwein 123d catch texturiert}
+\centering
+\includegraphics[width=80mm]{images/sparschwein/123d_Texture} % ersetzen
 \end{figure}
 
 \begin{figure}[p]
