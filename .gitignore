@@ -5,3 +5,6 @@ THUMBS.DB
 *.log
 *.synctex.gz
 *.out
+*.nav
+*.snm
+*.toc
