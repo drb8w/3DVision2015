@@ -35,12 +35,14 @@
 	\column{.3\textwidth}
 		\includegraphics[width=3.5cm]{images/Mann_Original.jpg}
 	\column{.7\textwidth}
-		\begin{itemize}
-		\item Kleine Figur aus Holz
-		\item Hat durch die Maserung eine gute Textur
-		\item Form annähernd eine Kugel
-		\item Problemstellen: konkave Regionen (z.B. bei den Armen) 
-		\end{itemize}
+		\begin{block}{}
+			\begin{itemize}
+			\item Kleine Figur aus Holz
+			\item Hat durch die Maserung eine gute Textur
+			\item Form annähernd eine Kugel
+			\item Problemstellen: konkave Regionen (z.B. bei den Armen) 
+			\end{itemize}
+		\end{block}
 	\end{columns}
 \end{frame}
 
@@ -68,33 +70,81 @@
 
 \begin{frame}{Mann-Modell: Evaluierung}
 
-	\begin{itemize}
-	\item 3 Messungen
+	\begin{block}{Messpunkte}
 		\begin{itemize}
 		\item Fußlänge
 		\item Armlänge
 		\item Hosenbund
 		\end{itemize}
-	\item $\varnothing$ Fehler Scan: $\pm 0,93$mm
-	\item $\varnothing$ Fehler 123D Catch: $\pm 2,62$mm
-	\item Volumen Scan: $544.250,14mm^3$
-	\item Volumen 123D Catch: $583.912,27mm^3$
+	\end{block}
+	
+	\begin{block}{Ergebnisse}
 		\begin{itemize}
-		\item Differenz: $39.662,13mm^3(7,28\%)$
+		\item $\varnothing$ Fehler Scan: $\pm 0,93$mm
+		\item $\varnothing$ Fehler 123D Catch: $\pm 2,62$mm
+		\item Volumen Scan: $544.250,14mm^3$
+		\item Volumen 123D Catch: $583.912,27mm^3$
+			\begin{itemize}
+			\item Differenz: $39.662,13mm^3(7,28\%)$
+			\end{itemize}
 		\end{itemize}
-	\end{itemize}
+	\end{block}
 	
 \end{frame}
 
-\begin{frame}{Objekte}
-	\includegraphics[width=3.5cm]{images/Budha/Budha_Original.jpg}
-	\includegraphics[width=3.5cm]{images/Mann_Original.jpg}
+\begin{frame}{Sparschwein}
+\center
 	\includegraphics[width=5cm]{images/sparschwein/photo.jpg}
+	\begin{block}{}
+		\begin{itemize}
+			\item Einfache Geometrie
+			\item Sehr dunkel -> Laser Intensität
+			\item Reflektierende Teile
+		\end{itemize}
+	\end{block}
+
 \end{frame}
 
-\begin{frame}{Finale Modelle}
-	\includegraphics[width=3.5cm]{./Images/Budha/Budha_SfM_Untextured.png}
-	\includegraphics[width=3.5cm]{images/Mann_Front}
-	\includegraphics[width=4.5cm]{images/sparschwein/final}
+\begin{frame}{Finales Modell - Sparschwein}
+\center
+	\includegraphics[height=5cm]{images/sparschwein/final2}
+	\includegraphics[height=5cm]{images/sparschwein/final3}
+	\begin{block}{}
+		\begin{itemize}
+			\item Global, Manuell Registriert, Vereinigt
+			\item Meshdoctor
+			\item Fehlende Geometrie an den Zehen wiederhergestellt
+			\item Sanding
+		\end{itemize}
+	\end{block}
 \end{frame}
+
+\begin{frame}{123d Catch - Sparschwein}
+\center
+	\includegraphics[width=10cm]{images/sparschwein/123d_Vergleich}
+	\begin{block}{}
+		\begin{itemize}
+			\item Wenig Textur -> wenig Features :(
+			\item Erst durch manuelle Registrierung brauchbar
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}{Evaluierung - Sparschwein}
+	\begin{block}{Messpunkte}
+		\begin{itemize}
+			\item Nasenbreite
+			\item Ohrenbreiten
+			\item Münzschlitzlänge
+			\item Münzauswurf Durchmesser
+			\item Schriftgröße
+		\end{itemize}
+	\end{block}
+	\begin{block}{}
+		Abweichung von $\pm1$mm
+	\end{block}
+\end{frame}
+
+
+
 \end{document}
